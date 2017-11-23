@@ -1,5 +1,6 @@
 #!/usr/env/python
 
 print "Hello world" ;
+print "Test sample" ;
 
 
