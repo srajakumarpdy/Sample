@@ -1,7 +1,7 @@
 *** Settings ***
 Library           Selenium2Library
 
-*** Test Cases ***
+*** Test Cases *** 
 manage_contacts
     Open Browser    http://trident.plugleads.com/    ff
     Input Text    id=emailide    venkateswara.dasari@nexiilabs.com
