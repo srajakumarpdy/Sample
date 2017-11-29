@@ -1,0 +1,140 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Test Cases ***
+manage_contacts
+    Open Browser    http://trident.plugleads.com/    ff
+    Input Text    id=emailide    venkateswara.dasari@nexiilabs.com
+    Input Password    id=passworde    Nexii@123
+    Click Button    xpath=//form[@id='loginform']/button
+    Sleep    10 seconds
+    Click Image    id=dashboardic
+    Sleep    5 seconds
+    Click Element    link=Manage Contacts
+    Sleep    5s
+    Input Text    id=userfname    sravanthi
+    Sleep    1s
+    Input Text    id=userlname    chilevera
+    Sleep    1s
+    Input Text    id=useremail    sravanya.talathoti@nexiilabs.com
+    Sleep    1s
+    Input Text    id=contactnumber    9898765432
+    Sleep    1s
+    Input Text    id=companyname    Trident
+    Sleep    1s
+    Select From List By Value    id=contactcreationregion    1
+    Sleep    1s
+    Select From List By Value    id=contactcreationcountry    3
+    Sleep    1s
+    Select From List By Value    id=contactcreationdesignation    1
+    Sleep    1s
+    Select From List By Value    id=contactcreationindustry    1
+    Sleep    1s
+    Select From List By Index    name=contactcreationservice    3
+    Sleep    1s
+    Select From List By Value    id=contactcreationdomain    1
+    Close Window
+*** Settings ***
+Library           Selenium2Library
+
+*** Test Cases ***
+manage_users
+    Open Browser    http://trident.plugleads.com/    ff
+    Input Text    id=emailide    venkateswara.dasari@nexiilabs.com
+    Input Password    id=passworde    Nexii@123
+    Click Button    xpath=//form[@id='loginform']/button
+    Sleep    5s
+    Click Image    id=manageuser
+    Sleep    2s
+    Click Element    xpath=//a[@onclick='usersLoader();']
+    Sleep    2s
+    Click Element    xpath=//a[@onclick='createUserPopup();']
+    Sleep    2s
+    Input Text    id=name    sravanthi
+    Sleep    1s
+    Input Text    id=lname    chilevera
+    Sleep    1s
+    Input Text    id=email    sravanthi.chilevera@nexiilabs.com
+    Sleep    1s
+    Select From List By Value    id=op1    2
+    Sleep    1s
+    Select From List By Value    id=op2    1
+    Sleep    1s
+    Click Button    css=button.btn.btn-danger
+    Sleep    1s
+    Close Window
+*** Settings ***
+Library           Selenium2Library
+
+*** Test Cases ***
+plugleads_registration
+    Open Browser    http://www.plugleads.com/    ff
+    Sleep    5s
+    Click Link    link=Register Now
+    Sleep    2s
+    Input Text    id=firstName    sravanthi
+    Sleep    1s
+    Input Text    id=lastName    chilevera
+    Input Text    id=companyName    Nexiilabs
+    Sleep    1s
+    Input Text    id=companyMailId    sravanthi.chilevera@nexiilabs.com
+    Sleep    1s
+    Select From List By Value    id=countries    India
+    Sleep    1s
+    Input Text    id=phone    9808765432
+    Sleep    1s
+    Click Button    id=registerbtn
+    Sleep    2s
+    Close Window
+*** Settings ***
+Library           Selenium2Library
+
+*** Test Cases ***
+plugleads_settings
+    Open Browser    http://trident.plugleads.com/    ff
+    Input Text    id=emailide    venkateswara.dasari@nexiilabs.com
+    Input Password    id=passworde    Nexii@123
+    Click Button    xpath=//form[@id='logform']/button
+    Sleep    5s
+    Click Image    id=orgchart
+    Sleep    5 seconds
+    Select From List By Value    id=mailsperhour    40
+    Sleep    2s
+    Select From List    id=mailsperday    100
+    Sleep    2s
+    Select From List By Index    id=mailsperipperhour    4
+    Sleep    2s
+    Select From List By Index    xpath=//select[@name='timezone']    3
+    Sleep    2s
+    Select From List By Index    id=maxnumberoffollowups    3
+    Close Window
+*** Settings ***
+Library           Selenium2Library
+
+*** Test Cases ***
+purchase_BDR
+    Open Browser    http://trident.plugleads.com/    ff
+    Input Text    id=emailide    venkateswara.dasari@nexiilabs.com
+    Input Password    id=passworde    Nexii@123
+    Click Button    xpath=//form[@id='loginform']/button
+    sleep    10 seconds
+    Click Image    id=dashboardic
+    Sleep    10s
+    Click Link    id=purchase-historyLink
+    Sleep    10s
+    Click Element    id=new-VBDELink1
+    Sleep    10s
+    Input Text    id=vbdename    BDR
+    sleep    10s
+    Select From List    id=mailServerId1    NexiiAutomation
+    Input Text    id=vbdeemail    micheal.kim@nexiiautomation.com
+    Input Password    id=vbdepassword    Nexii@123
+    Input Text    xpath=//textarea[@id="vbdesignatureid"]    Thanks
+    Sleep    5 seconds
+    Select From List By Value    id=vbdecreationservice    1
+    Set Browser Implicit Wait    10 seconds
+    Select From List By Value    id=vbdecreationregion    3
+    Select From List By Value    id=vbdecreationdomain    1
+    Select From List By Value    id=bdrList    1
+    Select From List By Value    id=packageId    0
+    Close Window
