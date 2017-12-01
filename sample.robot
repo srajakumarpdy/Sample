@@ -2,30 +2,30 @@
 Library           String
 
 *** Test Cases ***
-For-Loop-In-Range
+TC 1 : For-Loop-In-Range
     : FOR    ${INDEX}    IN RANGE    1    3
     \    Log    ${INDEX}
     \    ${RANDOM_STRING}=    Generate Random String    ${INDEX}
     \    Log    ${RANDOM_STRING}
 
-For-Loop-Elements
+TC 2 : For-Loop-Elements
     @{ITEMS}    Create List    Star Trek    Star Wars    Perry Rhodan
     :FOR    ${ELEMENT}    IN    @{ITEMS}
     \    Log    ${ELEMENT}
     \    ${ELEMENT}    Replace String    ${ELEMENT}    ${SPACE}    ${EMPTY}
     \    Log    ${ELEMENT}
 
-For-Loop-Exiting
+TC 3 : For-Loop-Exiting
     @{ITEMS}    Create List    Good Element 1    Break On Me    Good Element 2
     :FOR    ${ELEMENT}    IN    @{ITEMS}
     \    Log    ${ELEMENT}
     \    Run Keyword If    '${ELEMENT}' == 'Break On Me'    Exit For Loop
     \    Log    Do more actions here ...
 
-Repeat-Action
+TC 4 : Repeat-Action
     Repeat Keyword    2    Log    Repeating this ...
 
-Run-Keyword-If
+TC 5 : Run-Keyword-If
     ${TYPE}=    Set Variable    V1
     Run Keyword If    '${TYPE}' == 'V1'    Log     Testing Variant 1
     Run Keyword If    '${TYPE}' == 'V2'    Log    Testing Variant 2
