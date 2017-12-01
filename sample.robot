@@ -14,6 +14,7 @@ TC 2 : For-Loop-Elements
     \    Log    ${ELEMENT}
     \    ${ELEMENT}    Replace String    ${ELEMENT}    ${SPACE}    ${EMPTY}
     \    Log    ${ELEMENT}
+    \    Log Making some changes
 
 TC 3 : For-Loop-Exiting
     @{ITEMS}    Create List    Good Element 1    Break On Me    Good Element 2
